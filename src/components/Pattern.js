@@ -48,7 +48,14 @@ class Pattern extends React.Component {
                 {date} <br />
                 <div className="display-bar">
                     {this.renderPattern()}
-                    <button onClick={() => this.props.delPattern(date)}>x</button>
+                    <button
+                        onClick={() => {
+                            if (window.confirm("Delete this pattern?")){
+                                this.props.delPattern(date)
+                            }
+                        }}
+                        className="del-btn"
+                        >X</button>
                 </div>
             </div>
         )

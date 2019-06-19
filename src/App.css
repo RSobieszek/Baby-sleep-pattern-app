@@ -42,7 +42,7 @@ span {
 }
 
 .form button {
-  background-color: rgb(68, 146, 247);
+  background-color: rgb(226, 147, 28);
   /* padding: 15px 25px; */
   padding: 0.5em 1em;
   margin: 20px 0 5px 0;
@@ -55,7 +55,7 @@ span {
 }
 
 .form button:hover {
-  background-color: rgb(236, 159, 71);
+  background-color: rgb(236, 92, 35);
   transform: scale(1.05);
 }
 
@@ -87,16 +87,24 @@ span {
 
 .standard-div {
   height: 2em;
-  background-color: rgb(236, 159, 71);
+  background-color: rgb(218, 216, 216);
   width: 0.069%;
 }
 
 .nap-div {
   height: 2em;
-  background-color: rgb(68, 146, 247);
+  background-color: rgb(226, 147, 28);
   width: 0.069%;
 }
 
 .output {
   margin: 2%;
+}
+
+.del-btn {
+  margin-left: 5px;
+  background-color: transparent;
+  border: solid 1px red;
+  cursor: pointer;
+  color: red;
 }

@@ -144,7 +144,7 @@ class Main extends React.Component {
                     <form
                         onSubmit={this.handleSubmit}
                         className="form">
-                        <label>Day?
+                        <label>Day:
                             <input
                                 type="date"
                                 name="day"
@@ -152,7 +152,7 @@ class Main extends React.Component {
                                 value={this.state.tempNap.date} />
 
                         </label>
-                        <label>Start time:
+                        <label>Nap start time:
                             <input
                                 type="time"
                                 name="start-time"
@@ -160,7 +160,7 @@ class Main extends React.Component {
                                 value={this.state.tempNap.nap[0]} />
 
                         </label>
-                        <label>End time:
+                        <label>Nap end time:
                             <input
                                 type="time"
                                 name="end-time"
