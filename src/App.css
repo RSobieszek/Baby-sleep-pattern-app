@@ -1,0 +1,18 @@
+.display-bar {
+  display: flex;
+  width: 100%;
+}
+
+.standard-div {
+  background-color: grey;
+  width: 0.069%;
+}
+
+.nap-div {
+  background-color: green;
+  width: 0.069%;
+}
+
+.output {
+  margin: 2%;
+}
