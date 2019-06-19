@@ -1,15 +1,99 @@
+/* OVERALL */
+
+* {
+  font-family: 'Lato', sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background: rgb(207, 207, 207);
+  background: linear-gradient(0deg, rgba(207, 207, 207, 1) 0%, rgba(231, 231, 231, 1) 50%, rgba(255, 255, 255, 1) 100%);
+  background-size: cover;
+}
+
+/* WARNING */
+
+.container {
+  display: flex;
+  width: 100%;
+  margin: 2%;
+  justify-content: center;
+}
+
+span {
+  color: red;
+}
+
+/* INPUT */
+
+.input-container {
+  display: flex;
+  width: 100%;
+  margin: 2%;
+  padding: 2em;
+  justify-content: center;
+}
+
+.form button {
+  background-color: rgb(68, 146, 247);
+  /* padding: 15px 25px; */
+  padding: 0.5em 1em;
+  margin: 20px 0 5px 0;
+  border: solid 0;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 1em;
+  transition: 0.4s
+}
+
+.form button:hover {
+  background-color: rgb(236, 159, 71);
+  transform: scale(1.05);
+}
+
+/* .form label {
+  margin: 20px;
+  padding: 20px;
+} */
+
+.form input {
+  box-sizing: border-box;
+  outline: none;
+  /* display: block; */
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-bottom: 1px solid #ddd;
+  background: transparent;
+  margin: 10px 0px 10px 0px;
+  font: 16px Arial, Helvetica, sans-serif;
+  height: 45px;
+}
+
+/* PATTERNS */
+
 .display-bar {
   display: flex;
   width: 100%;
 }
 
 .standard-div {
-  background-color: grey;
+  height: 2em;
+  background-color: rgb(236, 159, 71);
   width: 0.069%;
 }
 
 .nap-div {
-  background-color: green;
+  height: 2em;
+  background-color: rgb(68, 146, 247);
   width: 0.069%;
 }
 

@@ -2,6 +2,12 @@ import React from 'react'
 import Pattern from './Pattern'
 import ls from 'local-storage'
 
+const today = new Date()
+const year = today.getFullYear()
+const month = ('0' + (today.getMonth() + 1)).slice(-2)
+const day = ('0' + today.getDate()).slice(-2)
+const todayDate = `${year}-${month}-${day}`
+
 class Main extends React.Component {
 
     state = {
@@ -27,6 +33,16 @@ class Main extends React.Component {
             // get patterns from local storage and inject them into app
             this.setState({ patterns: [...ls.get('patterns')] })
         }
+
+        // initialize input with today date
+        this.setState(prevState => {
+            return {
+                tempNap: {
+                    date: todayDate,
+                    nap: ["", ""]
+                }
+            }
+        })
     }
 
 
@@ -55,7 +71,7 @@ class Main extends React.Component {
                 return {
                     patterns: [...patterns],
                     tempNap: {
-                        date: "",
+                        date: todayDate,
                         nap: ["", ""]
                     }
                 }
@@ -95,40 +111,67 @@ class Main extends React.Component {
         this.setState({ tempNap: tempNap })
     }
 
+    delPattern = (date) => {
+        this.setState({
+            patterns: [...this.state.patterns
+                .filter(pattern => pattern.date !== date)]
+        })
+    }
+
+    // delUser = (nickname) => {
+    //     this.setState({
+    //         users: [...this.state.users
+    //             .filter(user => user.nickname !== nickname)
+    //         ]
+    //     })
+    // }
+
     render() {
         // preparing pattern list to display, sorted from newest to oldest
         const rendPatterns = this.state.patterns
             .sort((a, b) => new Date(b.date) - new Date(a.date))
             .map(
-                pattern => <Pattern pattern={pattern} />
+                pattern => <Pattern pattern={pattern} delPattern={this.delPattern} />
             )
 
         return (
             <React.Fragment>
-                <form onSubmit={this.handleSubmit}>
-                    <label>Day?
-                        <input
-                            type="date"
-                            name="day"
-                            onChange={this.handleChange}
-                            value={this.state.tempNap.date} />
-                    </label>
-                    <label>Start time:
-                        <input
-                            type="time"
-                            name="start-time"
-                            onChange={this.handleChange}
-                            value={this.state.tempNap.nap[0]} />
-                    </label>
-                    <label>End time:
-                        <input
-                            type="time"
-                            name="end-time"
-                            onChange={this.handleChange}
-                            value={this.state.tempNap.nap[1]} />
-                    </label>
-                    <button type="submit">Add nap</button>
-                </form>
+                <div className="container">
+                    <span><small>Warning! Data is saved only in your local storage in your browser!</small></span>
+                </div>
+                <div className="input-container">
+                    <br />
+                    <form
+                        onSubmit={this.handleSubmit}
+                        className="form">
+                        <label>Day?
+                            <input
+                                type="date"
+                                name="day"
+                                onChange={this.handleChange}
+                                value={this.state.tempNap.date} />
+
+                        </label>
+                        <label>Start time:
+                            <input
+                                type="time"
+                                name="start-time"
+                                onChange={this.handleChange}
+                                value={this.state.tempNap.nap[0]} />
+
+                        </label>
+                        <label>End time:
+                            <input
+                                type="time"
+                                name="end-time"
+                                onChange={this.handleChange}
+                                value={this.state.tempNap.nap[1]} />
+
+                        </label>
+                        <button
+                            type="submit">Add nap</button>
+                    </form>
+                </div>
 
                 <div className="output">
                     {rendPatterns}
