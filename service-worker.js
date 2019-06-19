@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Baby-sleep-pattern-app/precache-manifest.103c81910db4137f25b54f6435bea702.js"
+  "/Baby-sleep-pattern-app/precache-manifest.371ea2b74fe216b681373029e1f4cacd.js"
 );
 
 self.addEventListener('message', (event) => {
