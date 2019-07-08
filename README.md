@@ -1,3 +1,7 @@
+Click this link: https://rsobieszek.github.io/Baby-sleep-pattern-app/ to see live version
+
+----------------------------------------------
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
